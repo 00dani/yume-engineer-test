@@ -79,4 +79,4 @@ Create a basic CRUD (Create, Read, Update, Delete) application for managing prod
 
 This test aims to evaluate your understanding of Laravel basics, including routing, controllers, models, validation, testing and optionally pagination.
 Make sure to follow Laravel's conventions and best practices while implementing the solution.
-Good 
+Good luck!

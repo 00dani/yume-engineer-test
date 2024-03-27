@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
 
 class ProductController extends Controller
@@ -26,7 +27,9 @@ class ProductController extends Controller
     {
     }
 
-    public function delete(Product $product): JsonResponse
+    public function delete(Product $product): Response
     {
+        $product->delete();
+        return response()->noContent();
     }
 }

@@ -32,6 +32,13 @@ class ProductController extends Controller
 
     public function update(Request $request, Product $product): JsonResponse
     {
+        $request->validate([
+            'name' => ['min:3', 'max:255'],
+        ]);
+
+        $product->fill($request->all());
+        $product->save();
+        return response()->json($product);
     }
 
     public function delete(Product $product): Response

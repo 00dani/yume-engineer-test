@@ -16,6 +16,13 @@ class ProductController extends Controller
 
     public function create(Request $request): JsonResponse
     {
+        $request->validate([
+            'name' => ['required', 'min:3', 'max:255'],
+        ]);
+
+        $product = new Product($request->all());
+        $product->save();
+        return response()->json($product, 201);
     }
 
     public function view(Product $product): JsonResponse

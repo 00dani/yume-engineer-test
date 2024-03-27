@@ -19,6 +19,7 @@ class ProductController extends Controller
 
     public function view(Product $product): JsonResponse
     {
+        return response()->json($product);
     }
 
     public function update(Request $request, Product $product): JsonResponse

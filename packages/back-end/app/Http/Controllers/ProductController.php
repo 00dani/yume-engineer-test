@@ -12,4 +12,20 @@ class ProductController extends Controller
     {
         return response()->json(Product::all());
     }
+
+    public function create(Request $request): JsonResponse
+    {
+    }
+
+    public function view(Product $product): JsonResponse
+    {
+    }
+
+    public function update(Request $request, Product $product): JsonResponse
+    {
+    }
+
+    public function delete(Product $product): JsonResponse
+    {
+    }
 }

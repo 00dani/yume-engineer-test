@@ -9,8 +9,12 @@ use Illuminate\Http\JsonResponse;
 
 class ProductController extends Controller
 {
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
+        // Pagination is optional to avoid breaking the front-end's expectations.
+        if ($request->query->has('page')) {
+            return response()->json(Product::paginate(10));
+        }
         return response()->json(Product::all());
     }
 
